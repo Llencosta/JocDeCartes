@@ -17,6 +17,7 @@ namespace JuegoDeCartas
             baraja.NumeoCartas();
             baraja.RobaCarta();
             baraja.CogeCarta(20);
+            baraja.CogeCartaAlAzar();
             Console.WriteLine(" ");
             baraja.ToString();
             Console.ReadLine();

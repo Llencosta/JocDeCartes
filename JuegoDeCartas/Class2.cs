@@ -22,20 +22,26 @@ namespace JuegoDeCartas
 		{
 			Console.WriteLine(baraja.Count());
         }
-		public void RobaCarta()
+		public Carta RobaCarta()
 		{
+			Carta carta = baraja[0];
             Console.WriteLine(baraja[0].ToString());
             baraja.RemoveAt(0);
+			return carta;
 		}
-		public void CogeCarta(int PosicioDeLaCarta)
+		public Carta CogeCarta(int PosicioDeLaCarta)
 		{
 			Console.WriteLine(baraja[PosicioDeLaCarta].ToString());
+			Carta carta = baraja[PosicioDeLaCarta];
+			return carta;
         }
-		public void CogeCartaAlAzar()
+		public Carta CogeCartaAlAzar()
 		{
             Random rand = new Random();
             int cartaEsCojida = rand.Next(baraja.Count());
+			Carta carta = baraja[cartaEsCojida];
             Console.WriteLine(baraja[cartaEsCojida].ToString());
+			return carta;
         }
 		public void Barajar()
 		{
@@ -45,6 +51,7 @@ namespace JuegoDeCartas
                 Random rand = new Random();
                 int cartaEsCojida = rand.Next(baraja.Count());
 				barajaTemporal.Add(baraja[cartaEsCojida]);
+				baraja.RemoveAt(cartaEsCojida);
             }
 			baraja = barajaTemporal;
 		}
